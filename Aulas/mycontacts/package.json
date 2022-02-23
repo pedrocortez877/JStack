@@ -1,0 +1,9 @@
+{
+  "name": "mycontacts",
+  "version": "1.0.0",
+  "description": "Primeira API com express do curso JStack, para armazenar contatos de um usuário",
+  "main": "src/index.js",
+  "repository": "https://github.com/pedrocortez877/JStack",
+  "author": "Pedro Cortez",
+  "license": "MIT"
+}
