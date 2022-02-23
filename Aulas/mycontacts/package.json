@@ -6,6 +6,9 @@
   "repository": "https://github.com/pedrocortez877/JStack",
   "author": "Pedro Cortez",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
   "dependencies": {
     "express": "^4.17.3"
   },
