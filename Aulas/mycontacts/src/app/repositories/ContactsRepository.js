@@ -29,13 +29,28 @@ class ContactsRepository {
   async findAll(orderBy = "ASC") {
     const direction = orderBy.toUpperCase() === "DESC" ? "DESC" : "ASC";
     const rows = await db.query(
-      `SELECT * FROM contacts ORDER BY name ${direction}`
+      `SELECT contacts.*,
+        categories.id as category_id, categories.name as category_name
+      FROM contacts
+      LEFT JOIN categories
+      ON contacts.category_id = categories.id
+      ORDER BY contacts.name ${direction}`
     );
     return rows;
   }
 
   async findById(id) {
-    const [row] = await db.query("SELECT * FROM contacts where id = $1", [id]);
+    const [row] = await db.query(
+      `
+      SELECT contacts.*,
+        categories.id as category_id, categories.name as category_name
+      FROM contacts
+      LEFT JOIN categories
+      ON contacts.category_id = categories.id
+      where contacts.id = $1
+    `,
+      [id]
+    );
     return row;
   }
 
