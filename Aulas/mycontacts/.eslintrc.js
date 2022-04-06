@@ -19,5 +19,6 @@ module.exports = {
     "consistent-return": "off",
     "no-template-curly-in-string": "off",
     "import/extensions": "off",
+    "no-unused-vars": ["error", { argsIgnorePattern: "next" }],
   },
 };
