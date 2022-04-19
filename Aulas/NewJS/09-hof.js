@@ -43,3 +43,15 @@ const map = array.map((product) => {
 // .filer
 // RETORNA UM NOVO ARRAY QUE ATENDA AS CONDIÇÕES PASSADAS NA FUNÇÃO
 const filter = array.filter((product) => product.price > 999);
+
+
+// .reduce
+// REDUZ UM ARRAY A UM TIPO ESPECÍFICO DE DADOS
+// SEGUNDO PARÂMETRO ESPECIFICA O TIPO DE DADOS NO QUAL O ARRAY SERÁ REDUZIDO
+// FUNÇÃO QUE RECEBE 2 PARÂMETROS, accumulator e value
+// ACUMULATOR É UMA VARIÁVEL PARA ARMAZENAR DADO FINAL A SER EXIBIDO
+// OU SEJA, PODEMOS IR CONSTRUINDO O RESULTADO EM QUE O ARRAY SERA REDUZIDO
+// A PARTIR DESSE accumulator
+const accumulator = array.reduce((accumulator, product) => {
+  accumulator += product.quantity * product.price;
+}, 0);
