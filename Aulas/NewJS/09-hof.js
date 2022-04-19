@@ -14,3 +14,14 @@ const find = array.find((product) => product.name === 'Iphone');
 // NESTE CASO A POSIÇÃO DO ARRAY
 // CASO HAJA MAIS DE UM ELEMENTO QUE SATISFAÇA A CONDICIONAL, RETORNA O PRIMEIRO
 const findIndex = array.findIndex((product) => product.name === 'Iphone');
+
+
+// .some
+// VERIFICA SE ALGUM ELEMENTO DO ARRAY CORRESPONDE A CONDICIONAL
+// RETORNA UM BOOLEAN
+const some = array.some((product) => product.name === 'Iphone');
+
+// .every
+// VERIFICA SE TODOS OS ELEMENTOS DO ARRAY CORRESPONDEM A CONDICIONAL
+// RETORNA UM BOOLEAN
+const every = array.every((product) => product.name === 'Iphone');
