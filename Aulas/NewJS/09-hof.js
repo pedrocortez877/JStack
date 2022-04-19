@@ -38,3 +38,8 @@ const map = array.map((product) => {
     subtotal: product.quantity * product.price
   }
 });
+
+
+// .filer
+// RETORNA UM NOVO ARRAY QUE ATENDA AS CONDIÇÕES PASSADAS NA FUNÇÃO
+const filter = array.filter((product) => product.price > 999);
