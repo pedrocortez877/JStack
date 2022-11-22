@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { Post } from './Post';
-
-const category = 'Posts da semana';
+import { Header } from './Header';
 
 export default function App(){
   return (
     <>
+      <Header>
+        <span>My Header</span>
+      </Header>
+
       <Post title="Título da notícia 01"/>
 
       <Post title="Título da notícia 02"/>
