@@ -3,6 +3,12 @@ import React from 'react';
 import { Post } from './Post';
 import { Header } from './Header';
 
+const posts = [
+  {title: 'Title#01', subTitle: 'Sub#01', likes: 20},
+  {title: 'Title#02', subTitle: 'Sub#02', likes: 10},
+  {title: 'Title#03', subTitle: 'Sub#03', likes: 5},
+]
+
 export default function App(){
   return (
     <>
@@ -10,17 +16,18 @@ export default function App(){
         <span>My Header</span>
       </Header>
 
-      <Post post={{ title: 'Titulo 1', subTitle: 'Subiítulo da notícia 01' }} likes={20}/>
-
-      <Post post={{ title: 'Titulo 2', subTitle: 'Subiítulo da notícia 02' }} likes={20}/>
-
-      <Post post={{ title: 'Titulo 3', subTitle: 'Subiítulo da notícia 03' }} likes={20}/>
-
-      <Post post={{ title: 'Titulo 4', subTitle: 'Subiítulo da notícia 04' }} likes={20}/>
-
-      <Post post={{ title: 'Titulo 5', subTitle: 'Subiítulo da notícia 05' }}  likes={20}/>
-
-      <Post post={{ title: 'Titulo 6', subTitle: 'Subiítulo da notícia 06' }} likes={20}/>
+      {
+        posts.map((post, index) => (
+          <Post 
+            likes={post.likes}
+            post={{
+              title: post.title,
+              subTitle: post.subTitle
+            }}
+            key={index}
+          />
+        ))
+      }
     </>
   );
 }
