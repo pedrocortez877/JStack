@@ -18,6 +18,10 @@ export default function App(){
     console.log(posts);
   }
 
+  function handleRemovePost(postId){
+    setPosts((prevState) => prevState.filter((post) => post.id !== postId));
+  }
+
   return (
     <>
       <Header title='Meu title do header'>
@@ -30,10 +34,12 @@ export default function App(){
           <Post 
             likes={post.likes}
             post={{
+              id: post.id,
               title: post.title,
               subTitle: post.subTitle
             }}
             key={post.id}
+            onRemove={handleRemovePost}
           />
         ))
       }

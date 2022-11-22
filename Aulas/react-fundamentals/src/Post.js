@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-export function Post({post, likes}){
+export function Post(props){
  return (
   <>
     <article>
-      <strong>{post.title}</strong>
-      <small>{post.subTitle}</small>
-      <small>Likes: {likes}</small>
+      <strong>{props.post.title}</strong>
+      <button onClick={() => props.onRemove(props.post.id)}>Remover post</button>
+      <small>{props.post.subTitle}</small>
+      <small>Likes: {props.likes}</small>
     </article>
     <br />
   </>
@@ -16,7 +17,9 @@ export function Post({post, likes}){
 Post.propTypes = {
   likes: PropTypes.number.isRequired,
   post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string,
     subTitle: PropTypes.string,
-  }).isRequired
+  }).isRequired,
+  onRemove: PropTypes.func.isRequired
 }
