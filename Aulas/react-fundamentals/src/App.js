@@ -5,15 +5,15 @@ import { Header } from './Header';
 
 export default function App(){
   const [posts, setPosts] = useState([
-    {id: Math.random(), title: 'Title#01', subTitle: 'Sub#01', likes: 20},
-    {id: Math.random(), title: 'Title#02', subTitle: 'Sub#02', likes: 10},
-    {id: Math.random(), title: 'Title#03', subTitle: 'Sub#03', likes: 5},
+    {id: Math.random(), title: 'Title#01', subTitle: 'Sub#01', likes: 20, read: false},
+    {id: Math.random(), title: 'Title#02', subTitle: 'Sub#02', likes: 10, read: true},
+    {id: Math.random(), title: 'Title#03', subTitle: 'Sub#03', likes: 5, read: false},
   ]);
   
   function handleRefresh(){
     setPosts((prevState) => [
         ...prevState,
-        {id: Math.random(), title: `Title#0${posts.length + 1}`, subTitle: `Sub#0${posts.length + 1}`, likes: 30}
+        {id: Math.random(), title: `Title#0${posts.length + 1}`, subTitle: `Sub#0${posts.length + 1}`, likes: 30, read: false}
     ]);
     console.log(posts);
   }
@@ -32,12 +32,7 @@ export default function App(){
       {
         posts.map((post, index) => (
           <Post 
-            likes={post.likes}
-            post={{
-              id: post.id,
-              title: post.title,
-              subTitle: post.subTitle
-            }}
+            post={post}
             key={post.id}
             onRemove={handleRemovePost}
           />

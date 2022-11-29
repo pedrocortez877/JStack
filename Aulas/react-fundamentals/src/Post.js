@@ -15,8 +15,9 @@ export function Post(props){
 }
 
 Post.propTypes = {
-  likes: PropTypes.number.isRequired,
   post: PropTypes.shape({
     subTitle: PropTypes.string,
+    likes: PropTypes.number.isRequired,
+    read: PropTypes.bool.isRequired,
   }).isRequired,
 }
