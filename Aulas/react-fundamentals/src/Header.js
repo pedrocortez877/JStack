@@ -7,7 +7,12 @@ export function Header({title, children}){
   const {onToggleTheme} = useContext(ThemeContext);
  return (
   <>
-    <article>
+    <article 
+      style={{
+        background: '#CCC',
+        fontFamily: 'sans-serif'
+      }}
+    >
       <strong>{title}</strong>
       {children}
       <button onClick={onToggleTheme}>Mudar tema</button>
