@@ -4,6 +4,8 @@ import { Post } from './Post';
 import { Header } from './Header';
 import ThemeProvider from './ThemeContext';
 
+import './index.css'
+
 export default function App(){
   const [posts, setPosts] = useState([
     {id: Math.random(), title: 'Title#01', subTitle: 'Sub#01', likes: 20, read: false},
