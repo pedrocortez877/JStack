@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import { Post } from './Post';
 import { Header } from './Header';
+import ThemeProvider from './ThemeContext';
 
 export default function App(){
   const [posts, setPosts] = useState([
@@ -23,7 +24,7 @@ export default function App(){
   }
 
   return (
-    <>
+    <ThemeProvider>
       <Header title='Meu title do header'>
         <span>My Header</span>
         <button onClick={handleRefresh}>Atualizar</button>
@@ -38,6 +39,6 @@ export default function App(){
           />
         ))
       }
-    </>
+    </ThemeProvider>
   );
 }
