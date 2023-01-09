@@ -4,7 +4,7 @@ import { Post } from './Post';
 import { Header } from './Header';
 import ThemeProvider from './ThemeContext';
 
-import './index.css'
+import './index.scss'
 
 export default function App(){
   const [posts, setPosts] = useState([
