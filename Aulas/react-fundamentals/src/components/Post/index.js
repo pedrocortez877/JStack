@@ -4,6 +4,8 @@ import PostHeader from "./PostHeader";
 
 import styles from './index.scss'
 
+import { SubTitle, Likes } from "./styles";
+
 export function Post(props){
  return (
   <>
@@ -15,8 +17,8 @@ export function Post(props){
       }
     >
       <PostHeader post={props.post} onRemove={props.onRemove}/>
-      <small>{props.post.subTitle}</small>
-      <small>Likes: {props.likes}</small>
+      <SubTitle>{props.post.subTitle}</SubTitle>
+      <Likes>Likes: {props.likes}</Likes>
     </article>
     <br />
   </>
